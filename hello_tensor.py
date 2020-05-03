@@ -33,3 +33,18 @@ print(matrix)
 
 matrix = torch.randn_like(matrix, dtype=torch.float)    # override dtype!
 print(matrix)                                      # result has the same size
+
+# print size of a tensor
+# torch.Size is a tuple so it supports all tuple operations
+print(matrix.size())
+
+# Arithmetic operations
+print ("\nAddition of two Matrices")
+matrixA = matrix
+matrixA = matrixA.new_ones(5, 3, dtype=torch.double)      
+matrixB = torch.rand(5, 3)
+print(matrixA + matrixB)
+
+# alternate way to add
+print ("\nAlternate way to add two matrices")
+print(torch.add(matrixA, matrixB))
